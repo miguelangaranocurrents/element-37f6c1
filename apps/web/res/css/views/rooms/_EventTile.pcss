@@ -46,6 +46,11 @@ $left-gutter: 64px;
         }
     }
 
+    /* The body slot clips its direct child; let the autocomplete pop out above the edit composer */
+    .mx_EditMessageComposerWrapper {
+        overflow: visible;
+    }
+
     .mx_EventTile_searchHighlight {
         background-color: $accent;
         color: $accent-fg-color;

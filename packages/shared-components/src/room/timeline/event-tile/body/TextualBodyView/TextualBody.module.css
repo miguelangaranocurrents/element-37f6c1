@@ -41,6 +41,12 @@
     display: flex;
 }
 
+/* Let the body shrink in the row, so a wide code block scrolls inside the message
+   rather than widening the text out of view. */
+.annotated > * {
+    min-width: 0;
+}
+
 .annotatedInline {
     display: inline-flex;
 }
