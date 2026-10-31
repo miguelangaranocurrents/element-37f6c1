@@ -526,6 +526,9 @@ export class UnwrappedEventTile extends React.Component<EventTileProps, IState> 
     };
 
     private readonly onPreviewTileClick = (ev: MouseEvent<HTMLElement>): void => {
+        // Clicks on the action bar buttons (e.g. "View in room") have their own handlers and must not open the tile
+        if ((ev.target as HTMLElement).closest(".mx_ThreadActionBar")) return;
+
         const target = ev.currentTarget;
         const index = target.parentElement ? Array.from(target.parentElement.children).indexOf(target) : -1;
 
